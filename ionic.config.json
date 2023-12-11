@@ -1,0 +1,7 @@
+{
+  "name": "ma-ville-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
