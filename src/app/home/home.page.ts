@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, Platform } from '@ionic/angular/standalone';
 import { GoogleMap } from '@capacitor/google-maps';
 
@@ -11,7 +11,7 @@ import { GoogleMap } from '@capacitor/google-maps';
   imports: [IonHeader, IonToolbar, IonTitle, IonContent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class HomePage {
+export class HomePage implements AfterViewInit{
   @ViewChild('map') mapRef!: ElementRef<HTMLElement>;
   //@Input() datas!: any[];
   private api_key: string = 'API_KEY';
@@ -45,7 +45,7 @@ export class HomePage {
     console.log(this.newMap, 'newMap');
   }
 
-  ionViewDidEnter() {
+  ngAfterViewInit() {
     this.platform.ready().then(() => {
       console.log('platform is ready');
 
