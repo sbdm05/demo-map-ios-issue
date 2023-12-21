@@ -14,7 +14,7 @@ import { GoogleMap } from '@capacitor/google-maps';
 export class HomePage {
   @ViewChild('map') mapRef!: ElementRef<HTMLElement>;
   //@Input() datas!: any[];
-  private api_key: string = 'AIzaSyCPLwGXnUjTxgSk60GIqoSXI4YpvVLocYE';
+  private api_key: string = 'API_KEY';
   private newMap!: GoogleMap;
   constructor(private platform: Platform) {}
 
